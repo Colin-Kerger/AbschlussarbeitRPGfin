@@ -20,9 +20,9 @@ fun main(){
     var splittergranate: Weapon = Weapon("Letzfetz",40..50,)
 
 
-    sniper.medikitsmall()
+    sniper.sniperweapon.headshot(soldat1, sniper.name)
 
-
+    println("${soldat1.armor}  ${soldat1.hp}")
 
 }
 
