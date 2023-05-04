@@ -1,2 +1,2 @@
-class Ghost :Character("The Shadow",75,50){
+class Ghost :Held("The Shadow",75,50){
 }
