@@ -1,6 +1,6 @@
 import kotlin.random.Random
 
-class HeavyGunner(name: String, hp: Int, armor: Int) : Held(name, hp, armor) {
+class HeavyGunner(name: String, hp: Int, armor: Int,weapon: Weapon) : Held(name, hp, armor,weapon) {
 
 
 

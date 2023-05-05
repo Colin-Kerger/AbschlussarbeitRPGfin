@@ -1,9 +1,11 @@
 import kotlin.random.Random
 
-class Sniperweapon(modell: String, dmg: IntRange) : Weapon(modell, dmg) {
+class Minigun(modell:String, dmg:IntRange):Weapon(modell,dmg) {
 
 
-  override fun angriffH(held: Held,gegner: Gegner) {
+
+
+    override fun angriffH(held: Held,gegner: Gegner) {
         var schaden = dmg.random()
         var treffer = Random.nextBoolean()
         if (treffer == true) {
@@ -14,5 +16,4 @@ class Sniperweapon(modell: String, dmg: IntRange) : Weapon(modell, dmg) {
         } else
             println("hat daneben geschossen!!!")
     }
-
 }

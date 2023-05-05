@@ -1,7 +1,8 @@
 
 import kotlin.random.Random
 
-class Sniper(name: String, hp: Int, armor: Int, var sniperweapon: Sniperweapon) : Held(name, hp, armor) {
+class Sniper(name: String, hp: Int, armor: Int,var sniperweapon: Sniperweapon) : Held(name, hp, armor, sniperweapon) {
+
 
 
     override fun wahrscheinlichkeitZuTreffen(gegner: Gegner) {
