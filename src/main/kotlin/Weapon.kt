@@ -23,7 +23,7 @@ open class Weapon {
             gegner.armor = 0
             gegner.hp -= newDamageH
             if (gegner.hp <= 0) {
-                fussoldatenMob.remove(gegner)
+              println("${gegner.name}  wurde getötet!!!")
             }
         }
     }
@@ -37,7 +37,7 @@ open class Weapon {
             held.armor = 0
             held.hp -= newDamageG
             if (held.hp <= 0) {
-                heldenTrupp.remove(held)
+                println("${held.name}  wurde getötet!!!")
             }
         }
     }
