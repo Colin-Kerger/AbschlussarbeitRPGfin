@@ -12,7 +12,7 @@ class Sniperweapon(modell: String, dmg: IntRange) : Weapon(modell, dmg) {
 
             println("${held.name} schießt mit $modell  und trifft ${gegner.name} mit $schaden Schaden!!! ")
         } else
-            println("hat daneben geschossen!!!")
+            println("${held.name}hat daneben geschossen!!!")
     }
 
 }

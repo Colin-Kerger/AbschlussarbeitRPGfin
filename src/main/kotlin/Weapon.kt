@@ -17,19 +17,29 @@ open class Weapon {
         if (gegner.armor > damage) {
             gegner.armor -= damage
 
+
         } else if (gegner.armor < damage) {
-            gegner.hp -= damage
-
-        }
-    }
-        fun inflictDmgG(held: Held, damage: Int) {
-            if (held.armor > damage) {
-                held.armor -= damage
-
-            } else if (held.armor < damage) {
-                held.hp -= damage
-
+            var newDamageH = damage - gegner.armor
+            gegner.armor = 0
+            gegner.hp -= newDamageH
+            if (gegner.hp <= 0) {
+                fussoldatenMob.remove(gegner)
             }
         }
-
     }
+
+    fun inflictDmgG(held: Held, damage: Int) {
+        if (held.armor > damage) {
+            held.armor -= damage
+
+        } else if (held.armor < damage) {
+            var newDamageG = damage - held.armor
+            held.armor = 0
+            held.hp -= newDamageG
+            if (held.hp <= 0) {
+                heldenTrupp.remove(held)
+            }
+        }
+    }
+
+}
