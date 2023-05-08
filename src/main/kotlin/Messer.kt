@@ -1,8 +1,6 @@
 import kotlin.random.Random
 
-class Minigun(modell:String, dmg:IntRange):Weapon(modell,dmg) {
-
-
+class Messer (modell: String, dmg: IntRange) : Weapon(modell, dmg) {
 
 
     override fun angriffH(held: Held,gegner: Gegner) {
@@ -16,4 +14,5 @@ class Minigun(modell:String, dmg:IntRange):Weapon(modell,dmg) {
         } else
             println("${held.name}hat daneben geschossen!!!")
     }
+
 }

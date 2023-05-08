@@ -12,7 +12,7 @@ class AK47  (modell:String, dmg:IntRange):Weapon(modell,dmg){
 
                      println("${gegner.name} schießt mit $modell  und trifft ${held.name} mit $schaden Schaden!!! ")
               } else
-                     println("hat daneben geschossen!!!")
+                     println("${gegner.name} hat daneben geschossen!!!")
        }
 
 
