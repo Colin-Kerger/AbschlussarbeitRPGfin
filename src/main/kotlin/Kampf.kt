@@ -1,5 +1,3 @@
-
-
 var messer: Messer = Messer("Stich", 10..20)
 var minigun: Minigun = Minigun("Big Berta", 30..50)
 var aK47: AK47 = AK47("AK47", 10..20)
@@ -28,64 +26,69 @@ fun ruekkampf(gegner: Gegner, held: Held) {
 
 }
 
-fun hpCheckG() {
+fun hpCheckG(): Boolean {
     fussoldatenMob = fussoldatenMob.filter { it.hp > 0 }.toMutableList()
+    if (fussoldatenMob.isNotEmpty()) {
 
-    for (fusssoldat in fussoldatenMob) {
-        println(" ${fusssoldat.name} hat Leben ${fusssoldat.hp} und Rüstung${fusssoldat.armor}")
-
+        return true
     }
-
-
+    return false
 }
 
-fun hpCheckH() {
+fun hpCheckH(): Boolean {
     heldenTrupp = heldenTrupp.filter { it.hp > 0 }.toMutableList()
-    for (held in heldenTrupp) {
-        println(" ${held.name} hat Leben ${held.hp} und Rüstung ${held.armor}")
+    if (heldenTrupp.isNotEmpty()) {
+
+
+        return true
     }
-
-
+    return false
 }
 
 fun frontline() {
-try {
-    kampf(heldenTrupp.random(), gegner = fussoldatenMob.random())
-    hpCheckG()
+    while (hpCheckG() && hpCheckH()){
+        kampf(heldenTrupp.random(), gegner = fussoldatenMob.random())
 
-    println()
-    ruekkampf(fussoldatenMob.random(), heldenTrupp.random())
-    println()
-    hpCheckH()
-    println()
-    medikitsmall(ghost)
-    medikitsmall(sniper)
-    medikitsmall(heavygunner)
-}catch (e:Exception ){
-    println("Die erste Schlacht ist vorbei und unsere Helden gehen als Sieger hervor ")
+        for (fusssoldat in fussoldatenMob) {
+            println(" ${fusssoldat.name} hat Leben ${fusssoldat.hp} und Rüstung${fusssoldat.armor}")
+        }
+
+        if(hpCheckG()){
+        println()
+        ruekkampf(fussoldatenMob.random(), heldenTrupp.random())}
+        println()
+        for (held in heldenTrupp) {
+            println(" ${held.name} hat Leben ${held.hp} und Rüstung ${held.armor}")}
+        medikitsmall(ghost)
+        medikitsmall(sniper)
+        medikitsmall(heavygunner)
+    }
+
+        println("Die erste Schlacht ist vorbei und unsere Helden gehen als Sieger hervor ")
+    nachbesprechung()
+    }
+
+
+
+
+fun medikitsmall(held: Held) {
+
+    if (held.armor == 0 || held.hp < 20) {
+
+    } else if (held.armor == 0 || held.hp < 20) {
+        var newhp = held.hp + 20
+
+        println("${held.name}  hat sich um $newhp geheilt")
+    }
+
+
 }
-
-
-}
- fun medikitsmall(held: Held ) {
-
-     if (held.armor == 0 || held.hp < 20) {
-
-     } else if (held.armor == 0 || held.hp < 20) {
-         var newhp = held.hp + 20
-
-         println("${held.name}  hat sich um $newhp geheilt")
-     }
-
-
- }
-
 
 
 fun armorReg(held: Held) {
     heldenTrupp = heldenTrupp.filter { it.armor >= 0 }.toMutableList()
     for (held in heldenTrupp) {
-       var newArmor = held.armor+40
+        var newArmor = held.armor + 40
 
         println(" ${held.name} hat Leben ${held.hp} und Rüstung ${held.armor}")
     }
@@ -95,9 +98,12 @@ fun armorReg(held: Held) {
 fun nachbesprechung(){
     println("Sollen unsere Helden ihr Lager für die Nacht aufschlagen ? JA / NEIN ")
     var lagerAufschlagen = readln()
-    var ja  =lagerAufschlagen
     var nein = true
-    if (ja.also { lagerAufschlagen = it }){
+    var ja = true
+     lagerAufschlagen = ja.toString()
+
+
+    if (ja.toString().also { lagerAufschlagen = it }){
         println("Unsere Helden schlagen ihr lager für die Nacht auf ")
         armorReg(ghost)
         armorReg(sniper)
@@ -105,4 +111,5 @@ fun nachbesprechung(){
 }else if  (nein ==true ){
     println("Der Trupp zieht weiter")
 
-    }}
+    }
+}

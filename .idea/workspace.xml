@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8212f62d-c76a-4819-b6a6-9be99c638d4b" name="Changes" comment="gegener und helden löschen&#10;08.05.2023">
+    <list default="true" id="8212f62d-c76a-4819-b6a6-9be99c638d4b" name="Changes" comment="kampfende hpreg  armorreg&#10;08.05.2023">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/AK47.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/AK47.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Held.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Held.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Kampf.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Kampf.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Minigun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Minigun.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sniperweapon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Sniperweapon.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683553658986</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="kampfende hpreg  armorreg&#10;08.05.2023">
+      <created>1683634196098</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683634196098</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +172,7 @@
     <MESSAGE value="waffen schadenübernahme02.05.2023" />
     <MESSAGE value="waffen zuordnung&#10;02.05.2023" />
     <MESSAGE value="gegener und helden löschen&#10;08.05.2023" />
-    <option name="LAST_COMMIT_MESSAGE" value="gegener und helden löschen&#10;08.05.2023" />
+    <MESSAGE value="kampfende hpreg  armorreg&#10;08.05.2023" />
+    <option name="LAST_COMMIT_MESSAGE" value="kampfende hpreg  armorreg&#10;08.05.2023" />
   </component>
 </project>
