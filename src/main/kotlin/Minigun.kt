@@ -14,6 +14,7 @@ class Minigun(modell:String, dmg:IntRange):Weapon(modell,dmg) {
 
             println("${held.name} schießt mit $modell  und trifft ${gegner.name} mit $schaden Schaden!!! ")
         } else
-            println("${held.name} hat daneben geschossen!!!")
+            println("${held.name} hat mit $modell  daneben geschossen!!!")
+        println()
     }
 }

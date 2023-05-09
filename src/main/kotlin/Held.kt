@@ -13,9 +13,9 @@ open class Held {
         this.weapon = weapon
     }
 
-    open fun medikitsmall() {
+    open fun medikitsmall(held: Held) {
 
-        var hpreg = hp / 100 * 15 + hp
+        var hpreg = held.hp / 100 * 15 + hp
         println("$name wurde um $hpreg geheilt")
 
     }
