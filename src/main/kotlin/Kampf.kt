@@ -1,4 +1,16 @@
-var messer: Messer = Messer("Stich", 10..20)
+val red = "\u001b[31m"
+val redreset = "\u001b[0m"
+val green = "\u001b[32m"
+val greenreset = "\u001b[0m"
+val blue = "\u001b[34m"
+val bluereset = "\u001b[0m"
+val cyan = "\u001b[36m"
+val cyanreset = "\u001b[0m"
+val yellow = "\u001b[33m"
+val yellowreset = "\u001b[0m"
+
+
+var messer: Messer = Messer("Wie durch Butter", 10..20)
 var minigun: Minigun = Minigun("Big Berta", 30..50)
 var aK47: AK47 = AK47("AK47", 10..20)
 var sniperrifle: Sniperweapon = Sniperweapon("IseeU", 22..30)
@@ -11,10 +23,6 @@ var soldat2: Fusssoldat = Fusssoldat("Hugo", 80, 45, aK47)
 var soldat3: Fusssoldat = Fusssoldat("Smith", 80, 45, aK47)
 var fussoldatenMob = mutableListOf<Fusssoldat>(soldat1, soldat2, soldat3)
 var heldenTrupp = mutableListOf<Held>(sniper, heavygunner, ghost)
-val red = "\u001b[31m"
-val redreset ="\u001b[0m"
-val cyan ="\u001b[36m"
-val cyanreset ="\u001b[0m"
 
 
 fun kampf(held: Held, gegner: Gegner) {
@@ -41,75 +49,93 @@ fun hpCheckH(): Boolean {
     heldenTrupp = heldenTrupp.filter { it.hp > 0 }.toMutableList()
     if (heldenTrupp.isNotEmpty()) {
 
-
         return true
     }
     return false
 }
 
 fun frontline() {
-    while (hpCheckG() && hpCheckH()){
+    while (hpCheckG() && hpCheckH()) {
         kampf(heldenTrupp.random(), gegner = fussoldatenMob.random())
 
         for (fusssoldat in fussoldatenMob) {
             println("       $blue${fusssoldat.name}$bluereset hat Leben $red${fusssoldat.hp}$redreset und Rüstung $cyan${fusssoldat.armor}$cyanreset")
         }
 
-        if(hpCheckG()){
+        if (hpCheckG()) {
 
-        ruekkampf(fussoldatenMob.random(), heldenTrupp.random())}
+            ruekkampf(fussoldatenMob.random(), heldenTrupp.random())
+            medikitsmall()
+        }
+
+
 
         for (held in heldenTrupp) {
-            println("       $green${held.name}$greenreset hat Leben $red${held.hp}$redreset und Rüstung $cyan${held.armor}$cyanreset")}
+            println("       $green${held.name}$greenreset hat Leben $red${held.hp}$redreset und Rüstung $cyan${held.armor}$cyanreset")
+        }
 
     }
 
-        println("Die erste Schlacht ist vorbei und unsere Helden gehen als Sieger hervor ")
-
-    }
-
-
-
-
-fun medikitsmall(held: Held) {
-
-    if (held.armor == 0 || held.hp <= 20) {
-
-    } else if (held.armor == 0 || held.hp < 20) {
-        var newhp = held.hp + 20
-
-        println("${held.name}  hat sich um $newhp Gesundheit")
-    }
-
+    println("Die erste Schlacht ist vorbei und unsere Helden gehen als Sieger hervor ")
 
 }
 
 
-fun armorReg(held: Held) {
+fun medikitsmall() {
+
+    for (held in heldenTrupp){
+       if (held.hp <=20){
+           held.hp += 10
+           println("$green${held.name}$greenreset hat sich um $red${held.hp}$redreset Gesundheit")}
+    }
+}
+
+
+
+fun medikitBig() {
+
+    heldenTrupp = heldenTrupp.filter { it.hp <= 100 }.toMutableList()
+
+    for (held in heldenTrupp){
+        held.hp += 50
+
+    }
+}
+
+fun armorReg() {
     heldenTrupp = heldenTrupp.filter { it.armor >= 0 }.toMutableList()
     for (held in heldenTrupp) {
-        var newArmor = held.armor + 40
+        held.armor += 50
 
-        println(" ${held.name} hat Leben ${held.hp} und Rüstung ${held.armor}")
+        println(" $green${held.name}$greenreset hat Leben $red${held.hp}$redreset und Rüstung $cyan${held.armor}$cyanreset")
     }
 
 
 }
-/*fun nachbesprechung(){
+
+fun nachbesprechung() {
     println("Sollen unsere Helden ihr Lager für die Nacht aufschlagen ? JA / NEIN ")
     var lagerAufschlagen = readln()
-    var nein = true
-    var ja = true
-     lagerAufschlagen = ja.toString()
 
 
-    if (ja.toString().also { lagerAufschlagen = it }){
-        println("Unsere Helden schlagen ihr lager für die Nacht auf ")
-        armorReg(ghost)
-        armorReg(sniper)
-        armorReg(heavygunner)
-}else if  (nein ==true ){
-    println("Der Trupp zieht weiter")
+
+
+    if ("ja" == lagerAufschlagen) {
+        medikitBig()
+        armorReg()
+
+        println(
+            "Unsere Helden schlagen ihr lager für die Nacht auf. \n " +
+                    "Sie reparieren im Schein des Lagerfeuer ihre Rüstungen,\n" +
+                    "und legen sich später zur Erholen hin zum schlafen "
+        )
+
+
+    } else if ("nein" == lagerAufschlagen) {
+        println("Der Trupp zieht weiter")
 
     }
-}*/
+    for (held in heldenTrupp){
+        println(held.name + held.hp + held.armor)
+    }
+}

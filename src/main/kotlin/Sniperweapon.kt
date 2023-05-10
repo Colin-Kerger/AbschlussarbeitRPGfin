@@ -16,7 +16,7 @@ class Sniperweapon(modell: String, dmg: IntRange) : Weapon(modell, dmg) {
             inflictDmgH(gegner,schaden)
 
 
-            println("\n$green${held.name}$greenreset schießt mit $yellow$modell$yellowreset und trifft $blue${gegner.name}${bluereset}mit $red$schaden$reset Schaden!!! \n")
+            println("\n$green${held.name}$greenreset schießt mit $yellow$modell$yellowreset und trifft $blue${gegner.name}${bluereset} mit $red$schaden$reset Schaden!!! \n")
 
         } else
 

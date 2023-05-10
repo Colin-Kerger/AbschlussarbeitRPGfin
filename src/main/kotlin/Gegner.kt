@@ -12,11 +12,9 @@ open class Gegner {
         this.armor = armor
         this.weapon=weapon
     }
-    open fun schiesen(gegner:Gegner){
-        println("greift an ")
 
 
-    }
+
 
 
 }

@@ -7,10 +7,11 @@
     <list default="true" id="8212f62d-c76a-4819-b6a6-9be99c638d4b" name="Changes" comment="Farben hinzugefügt&#10;10.05.2023">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/AK47.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/AK47.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Gegner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Gegner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Ghost.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Ghost.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Kampf.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Kampf.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Messer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Messer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Minigun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Minigun.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sniper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Sniper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sniperweapon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Sniperweapon.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Weapon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Weapon.kt" afterDir="false" />
     </list>
@@ -172,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683706378142</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Farben hinzugefügt&#10;10.05.2023">
+      <created>1683709345889</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1683709345889</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

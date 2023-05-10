@@ -1,7 +1,4 @@
-val blue="\u001b[34m"
-val bluereset= "\u001b[0m"
-val green="\u001b[32m"
-val greenreset="\u001b[0m"
+
 
 open class Weapon {
 
@@ -19,7 +16,7 @@ open class Weapon {
     open fun angriffH(held: Held, gegner: Gegner) {}
     open fun angriffG(gegner: Gegner, held: Held) {}
     fun inflictDmgH(gegner: Gegner, damage: Int) {
-        if (gegner.armor > damage) {
+        if (gegner.armor >= damage) {
             gegner.armor -= damage
 
 
@@ -35,7 +32,7 @@ open class Weapon {
     }
 
     fun inflictDmgG(held: Held, damage: Int) {
-        if (held.armor > damage) {
+        if (held.armor >= damage) {
             held.armor -= damage
 
         } else if (held.armor < damage) {
