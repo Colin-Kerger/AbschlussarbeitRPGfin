@@ -3,8 +3,7 @@ fun main(){
 
 
 
-    frontline()
-    nachbesprechung()
-    sturmZumTor()
+
+    dertürOeffner()
 }
 

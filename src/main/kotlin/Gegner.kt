@@ -10,7 +10,8 @@ open class Gegner {
         this.name = name
         this.hp = hp
         this.armor = armor
-        this.weapon=weapon
+        this.weapon = weapon
+        this.weapon = weapon
     }
 
 

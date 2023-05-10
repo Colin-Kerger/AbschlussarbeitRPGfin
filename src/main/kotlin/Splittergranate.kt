@@ -1,8 +1,6 @@
 import kotlin.random.Random
 
-class MGNest (modell:String,dmg:IntRange):Weapon(modell,dmg) {
-
-
+class Splittergranate (modell: String, dmg: IntRange) : Weapon(modell, dmg){
 
     override fun angriffG(gegner: Gegner,held: Held) {
         var schaden = dmg.random()
@@ -15,8 +13,5 @@ class MGNest (modell:String,dmg:IntRange):Weapon(modell,dmg) {
         } else
             println("\n$blue${gegner.name}$bluereset hat mit der $yellow$modell$yellowreset daneben geschossen!!!\n")
     }
-
-
-
 
 }
