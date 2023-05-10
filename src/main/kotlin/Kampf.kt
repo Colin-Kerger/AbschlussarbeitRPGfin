@@ -14,6 +14,7 @@ var messer: Messer = Messer("Wie durch Butter", 10..20)
 var minigun: Minigun = Minigun("Big Berta", 30..50)
 var aK47: AK47 = AK47("AK47", 10..20)
 var sniperrifle: Sniperweapon = Sniperweapon("IseeU", 22..30)
+var mgNest: MGNest = MGNest("BRRR BRRR", 20..50)
 var sniper: Sniper = Sniper("Eageleye", 100, 25, sniperrifle)
 var ghost: Held = Held("The Shadow", 100, 50, messer)
 var heavygunner: HeavyGunner = HeavyGunner("Johnny", 100, 100, minigun)
@@ -21,9 +22,15 @@ var heavygunner: HeavyGunner = HeavyGunner("Johnny", 100, 100, minigun)
 var soldat1: Fusssoldat = Fusssoldat("Larry", 80, 45, aK47)
 var soldat2: Fusssoldat = Fusssoldat("Hugo", 80, 45, aK47)
 var soldat3: Fusssoldat = Fusssoldat("Smith", 80, 45, aK47)
+
+var mgschuetze1: MgSchuetze = MgSchuetze("Bobby", 100, 40, mgNest)
+var mgschuetze2: MgSchuetze = MgSchuetze("Nick", 100, 40, mgNest)
+var mgschuetze3: MgSchuetze = MgSchuetze("Klaus", 100, 40, mgNest)
+
+
 var fussoldatenMob = mutableListOf<Fusssoldat>(soldat1, soldat2, soldat3)
 var heldenTrupp = mutableListOf<Held>(sniper, heavygunner, ghost)
-
+var mgNestMob = mutableListOf<MgSchuetze>(mgschuetze1, mgschuetze2, mgschuetze3)
 
 fun kampf(held: Held, gegner: Gegner) {
     held.weapon.angriffH(held, gegner)
@@ -76,27 +83,27 @@ fun frontline() {
 
     }
 
-    println("Die erste Schlacht ist vorbei und unsere Helden gehen als Sieger hervor ")
+    println("\nDie erste Schlacht ist vorbei und unsere Helden gehen als Sieger hervor\n ")
 
 }
 
 
 fun medikitsmall() {
 
-    for (held in heldenTrupp){
-       if (held.hp <=20){
-           held.hp += 10
-           println("$green${held.name}$greenreset hat sich um $red${held.hp}$redreset Gesundheit")}
+    for (held in heldenTrupp) {
+        if (held.hp <= 20) {
+            held.hp += 10
+            println("    $green${held.name}$greenreset hat sich um $red 10 $redreset Gesundheitspunkte geheilt")
+        }
     }
 }
-
 
 
 fun medikitBig() {
 
     heldenTrupp = heldenTrupp.filter { it.hp <= 100 }.toMutableList()
 
-    for (held in heldenTrupp){
+    for (held in heldenTrupp) {
         held.hp += 50
 
     }
@@ -114,28 +121,57 @@ fun armorReg() {
 }
 
 fun nachbesprechung() {
-    println("Sollen unsere Helden ihr Lager für die Nacht aufschlagen ? JA / NEIN ")
+    println("Sollen unsere Helden ihr Lager für die Nacht aufschlagen ? ja / nein ")
     var lagerAufschlagen = readln()
-
-
-
-
     if ("ja" == lagerAufschlagen) {
-        medikitBig()
-        armorReg()
-
         println(
-            "Unsere Helden schlagen ihr lager für die Nacht auf. \n " +
+            " Unsere Helden schlagen ihr lager für die Nacht auf. \n " +
                     "Sie reparieren im Schein des Lagerfeuer ihre Rüstungen,\n" +
-                    "und legen sich später zur Erholen hin zum schlafen "
+                    " und legen sich später zur Erholen hin zum schlafen. "
         )
 
-
+        medikitBig()
+        armorReg()
     } else if ("nein" == lagerAufschlagen) {
         println("Der Trupp zieht weiter")
 
     }
-    for (held in heldenTrupp){
-        println(held.name + held.hp + held.armor)
+
+}
+
+
+fun hpCheckGmg(): Boolean {
+    mgNestMob = mgNestMob.filter { it.hp > 0 }.toMutableList()
+    if (mgNestMob.isNotEmpty()) {
+
+        return true
     }
+    return false
+}
+
+fun sturmZumTor() {
+    while (hpCheckGmg() && hpCheckH()) {
+        kampf(heldenTrupp.random(), gegner = mgNestMob.random())
+
+        for (mgSchuetze in mgNestMob) {
+
+            println("       $blue${mgSchuetze.name}$bluereset hat Leben $red${mgSchuetze.hp}$redreset und Rüstung $cyan${mgSchuetze.armor}$cyanreset")
+        }
+
+        if (hpCheckGmg()) {
+
+            ruekkampf(mgNestMob.random(), heldenTrupp.random())
+            medikitsmall()
+        }
+
+
+
+        for (held in heldenTrupp) {
+            println("       $green${held.name}$greenreset hat Leben $red${held.hp}$redreset und Rüstung $cyan${held.armor}$cyanreset")
+        }
+
+    }
+
+    println("\nDie erste Schlacht ist vorbei und unsere Helden gehen als Sieger hervor\n ")
+
 }
