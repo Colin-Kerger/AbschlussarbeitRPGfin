@@ -1,3 +1,8 @@
+val blue="\u001b[34m"
+val bluereset= "\u001b[0m"
+val green="\u001b[32m"
+val greenreset="\u001b[0m"
+
 open class Weapon {
 
     open var modell: String
@@ -23,7 +28,7 @@ open class Weapon {
             gegner.armor = 0
             gegner.hp -= newDamageH
             if (gegner.hp <= 0) {
-              println("${gegner.name}  wurde getötet!!!")
+              println("$blue${gegner.name}$bluereset wurde getötet!!!")
             }
         }
     }
@@ -37,7 +42,7 @@ open class Weapon {
             held.armor = 0
             held.hp -= newDamageG
             if (held.hp <= 0) {
-                println("${held.name}  wurde getötet!!!")
+                println("$green${held.name}$greenreset wurde getötet!!!")
             }
         }
     }

@@ -11,8 +11,9 @@ var soldat2: Fusssoldat = Fusssoldat("Hugo", 80, 45, aK47)
 var soldat3: Fusssoldat = Fusssoldat("Smith", 80, 45, aK47)
 var fussoldatenMob = mutableListOf<Fusssoldat>(soldat1, soldat2, soldat3)
 var heldenTrupp = mutableListOf<Held>(sniper, heavygunner, ghost)
-val red = "\u001B[31m"
-val greenBg = "\u001B[42m"
+val red = "\u001b[31m"
+val redreset ="\u001b[0m"
+
 
 
 fun kampf(held: Held, gegner: Gegner) {
@@ -50,7 +51,7 @@ fun frontline() {
         kampf(heldenTrupp.random(), gegner = fussoldatenMob.random())
 
         for (fusssoldat in fussoldatenMob) {
-            println(" ${fusssoldat.name} hat Leben ${fusssoldat.hp} und Rüstung${fusssoldat.armor}")
+            println(" $blue${fusssoldat.name}$bluereset hat Leben $red${fusssoldat.hp}$redreset und Rüstung${fusssoldat.armor}")
         }
 
         if(hpCheckG()){
@@ -58,14 +59,12 @@ fun frontline() {
         ruekkampf(fussoldatenMob.random(), heldenTrupp.random())}
         println()
         for (held in heldenTrupp) {
-            println(" ${held.name} hat Leben ${held.hp} und Rüstung ${held.armor}")}
-        medikitsmall(ghost)
-        medikitsmall(sniper)
-        medikitsmall(heavygunner)
+            println("$green${held.name}$greenreset hat Leben $red${held.hp}$redreset und Rüstung ${held.armor}")}
+
     }
 
         println("Die erste Schlacht ist vorbei und unsere Helden gehen als Sieger hervor ")
-    nachbesprechung()
+
     }
 
 
@@ -95,7 +94,7 @@ fun armorReg(held: Held) {
 
 
 }
-fun nachbesprechung(){
+/*fun nachbesprechung(){
     println("Sollen unsere Helden ihr Lager für die Nacht aufschlagen ? JA / NEIN ")
     var lagerAufschlagen = readln()
     var nein = true
@@ -112,4 +111,4 @@ fun nachbesprechung(){
     println("Der Trupp zieht weiter")
 
     }
-}
+}*/
