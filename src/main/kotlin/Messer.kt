@@ -17,9 +17,11 @@ class Messer (modell: String, dmg: IntRange) : Weapon(modell, dmg) {
             inflictDmgH(gegner,schaden)
 
 
-            println("$green${held.name}$greenreset wirft $yellow$modell$yellowreset und trifft $blue${gegner.name}$bluereset mit $red$schaden$reset Schaden!!! ")
+            println("\n$green${held.name}$greenreset wirft $yellow$modell$yellowreset und trifft $blue${gegner.name}$bluereset mit $red$schaden$reset Schaden!!!\n ")
         } else
-            println("$green${held.name}${greenreset}hat mit $yellow$modell$yellowreset daneben geworfen!!!")
+
+            println("\n$green${held.name}${greenreset}hat mit $yellow$modell$yellowreset daneben geworfen!!!\n")
+
     }
 
 }

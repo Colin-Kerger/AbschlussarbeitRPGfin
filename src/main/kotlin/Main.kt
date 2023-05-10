@@ -26,6 +26,9 @@ fun main(){
     val greenreset="\u001b[0m"
     val blue="\u001b[34m"
     val bluereset= "\u001b[0m"
+    val cyan ="\u001b[36m"
+    val cyanreset ="\u001b[0m"
+
     frontline()
 
 

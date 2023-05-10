@@ -13,7 +13,8 @@ var fussoldatenMob = mutableListOf<Fusssoldat>(soldat1, soldat2, soldat3)
 var heldenTrupp = mutableListOf<Held>(sniper, heavygunner, ghost)
 val red = "\u001b[31m"
 val redreset ="\u001b[0m"
-
+val cyan ="\u001b[36m"
+val cyanreset ="\u001b[0m"
 
 
 fun kampf(held: Held, gegner: Gegner) {
@@ -51,15 +52,15 @@ fun frontline() {
         kampf(heldenTrupp.random(), gegner = fussoldatenMob.random())
 
         for (fusssoldat in fussoldatenMob) {
-            println(" $blue${fusssoldat.name}$bluereset hat Leben $red${fusssoldat.hp}$redreset und Rüstung${fusssoldat.armor}")
+            println("       $blue${fusssoldat.name}$bluereset hat Leben $red${fusssoldat.hp}$redreset und Rüstung $cyan${fusssoldat.armor}$cyanreset")
         }
 
         if(hpCheckG()){
-        println()
+
         ruekkampf(fussoldatenMob.random(), heldenTrupp.random())}
-        println()
+
         for (held in heldenTrupp) {
-            println("$green${held.name}$greenreset hat Leben $red${held.hp}$redreset und Rüstung ${held.armor}")}
+            println("       $green${held.name}$greenreset hat Leben $red${held.hp}$redreset und Rüstung $cyan${held.armor}$cyanreset")}
 
     }
 
@@ -72,12 +73,12 @@ fun frontline() {
 
 fun medikitsmall(held: Held) {
 
-    if (held.armor == 0 || held.hp < 20) {
+    if (held.armor == 0 || held.hp <= 20) {
 
     } else if (held.armor == 0 || held.hp < 20) {
         var newhp = held.hp + 20
 
-        println("${held.name}  hat sich um $newhp geheilt")
+        println("${held.name}  hat sich um $newhp Gesundheit")
     }
 
 

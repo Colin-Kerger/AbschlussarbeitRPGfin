@@ -16,9 +16,9 @@ class AK47  (modell:String, dmg:IntRange):Weapon(modell,dmg){
                      inflictDmgG(held,schaden)
 
 
-                     println("$blue${gegner.name}$bluereset schießt mit der $yellow$modell$yellowreset  und trifft $green${held.name}$greenreset mit $red$schaden $reset Schaden!!! ")
+                     println("\n$blue${gegner.name}$bluereset schießt mit der $yellow$modell$yellowreset und trifft $green${held.name}$greenreset mit $red$schaden$reset Schaden!!! \n")
               } else
-                     println("$blue${gegner.name}$bluereset hat mit der$yellow$modell$yellowreset daneben geschossen!!!")
+                     println("\n$blue${gegner.name}$bluereset hat mit der$yellow$modell$yellowreset daneben geschossen!!!\n")
        }
 
 

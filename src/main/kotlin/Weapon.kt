@@ -28,7 +28,8 @@ open class Weapon {
             gegner.armor = 0
             gegner.hp -= newDamageH
             if (gegner.hp <= 0) {
-              println("$blue${gegner.name}$bluereset wurde getötet!!!")
+
+              println("    $blue${gegner.name}$bluereset wurde getötet!!!")
             }
         }
     }
@@ -42,7 +43,8 @@ open class Weapon {
             held.armor = 0
             held.hp -= newDamageG
             if (held.hp <= 0) {
-                println("$green${held.name}$greenreset wurde getötet!!!")
+
+                println("     $green${held.name}$greenreset wurde getötet!!!")
             }
         }
     }

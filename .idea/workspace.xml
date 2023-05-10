@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8212f62d-c76a-4819-b6a6-9be99c638d4b" name="Changes" comment="kampfende hpreg  armorreg&#10;08.05.2023">
+    <list default="true" id="8212f62d-c76a-4819-b6a6-9be99c638d4b" name="Changes" comment="Farben hinzugefügt&#10;10.05.2023">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/AK47.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/AK47.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Kampf.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Kampf.kt" afterDir="false" />
@@ -165,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683638480139</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Farben hinzugefügt&#10;10.05.2023">
+      <created>1683706378142</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1683706378142</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,6 +192,8 @@
     <MESSAGE value="waffen zuordnung&#10;02.05.2023" />
     <MESSAGE value="gegener und helden löschen&#10;08.05.2023" />
     <MESSAGE value="kampfende hpreg  armorreg&#10;08.05.2023" />
-    <option name="LAST_COMMIT_MESSAGE" value="kampfende hpreg  armorreg&#10;08.05.2023" />
+    <MESSAGE value="Farben hinzugefügt&#10;08.05.2023" />
+    <MESSAGE value="Farben hinzugefügt&#10;10.05.2023" />
+    <option name="LAST_COMMIT_MESSAGE" value="Farben hinzugefügt&#10;10.05.2023" />
   </component>
 </project>

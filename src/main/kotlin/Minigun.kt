@@ -16,10 +16,12 @@ class Minigun(modell:String, dmg:IntRange):Weapon(modell,dmg) {
         var treffer = Random.nextBoolean()
         if (treffer == true) {
 
-            println("$green${held.name}$greenreset schießt mit der $yellow$modell$yellowreset und trifft $blue${gegner.name}$bluereset mit $red$schaden$reset Schaden!!! ")
+            println("\n$green${held.name}$greenreset schießt mit der $yellow$modell$yellowreset und trifft $blue${gegner.name}$bluereset mit $red$schaden$reset Schaden!!!\n ")
+
             inflictDmgH(gegner,schaden)
         } else
-            println("$green${held.name}$greenreset hat mit $yellow$modell$yellowreset  daneben geschossen!!!")
-        println()
+
+            println("\n$green${held.name}$greenreset hat mit $yellow$modell$yellowreset  daneben geschossen!!!\n")
+
     }
 }
