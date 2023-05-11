@@ -348,7 +348,7 @@ fun statusbericht2() {
                     " ${green}Johnny$greenreset:“${cyan}Im Winter wenn es kalt wir merke ich das scheiß Schrapnell ab und an immer noch!!${cyanreset}“\n" +
                     " ${green}BOMBEN-BON$greenreset:“${cyan}Das Feuerwerk$fireworks ist bereit$cyanreset“           "
         )
-        println("${red}Willst du es knallen?$redreset tippe ein “${green}ja$greenreset ")
+        println("${red}Willst du es knallen lassen?$redreset tippe ein “${green}ja$greenreset ")
         var feuerwerk = readln()
         feuerwerk = "ja"
     } else if ("nein" == lagerAufschlagen) {
@@ -393,8 +393,8 @@ fun statusbericht3() {
         medikitBig()
         armorReg()
         println()
-        println("$cyan Mit Adrenalin vollgepumpt und dem Kampfgeist eines Tigers stürmen sie auf in ihr letztes Gefecht zu welches  ")
-        println("${red}zu Ende gekämpft muss!$redreset tippe ein “$green ok$greenreset“")
+        println("$cyan Mit Adrenalin vollgepumpt und dem Kampfgeist eines Tigers stürmen sie auf in ihr letztes Gefecht zu, welches  ")
+        println("${red}zu Ende gekämpft werden muss!$redreset tippe ein “$green ok$greenreset“")
         var weiter = readln()
         weiter = "ok"
     } else if ("nein" == lagerAufschlagen) {
@@ -435,7 +435,7 @@ fun endfight() {
                     "${green}Johnny$greenreset:“${cyan}Los beeilt euch der Heli wartet vielleicht bekomme ich noch die 2. Hälfte vom SUPERBOWL mit!${cyanreset}“\n" +
                     "${green}BOMBEN-BOB$greenreset:“${cyan}ABER !!...ABER!! Seht ihr nicht diese ganzen hübschen Mädelns!!${cyanreset}“\n" +
                     "${green}Shadow$greenreset:“${cyan}Und ich sehe dein Gesicht willst du dich noch mehr$cyanreset“${cyan}beim rasieren schneiden$cyanreset“${cyan}?\n" +
-                    "${green}BOMBEN-BOB$greenreset:“${cyan}Ist schlimmer geworden ne?$cyanreset“\n" +
+                    "${green}BOMBEN-BOB$greenreset:“${cyan}Ist schlimmer geworden, ne?$cyanreset“\n" +
                     "${green}Eageleye$greenreset:“${cyan}Deine Frau wird bestimmt nix merken. $cyanreset“\n" +
                     "${cyan}ALLLE $laughingCrying$laughingCrying$laughingCrying$laughingCrying   ")
 
