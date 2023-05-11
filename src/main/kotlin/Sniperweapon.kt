@@ -9,15 +9,15 @@ class Sniperweapon(modell: String, dmg: IntRange) : Weapon(modell, dmg) {
     val yellowreset = "\u001b[0m"
     val blue="\u001b[34m"
     val bluereset= "\u001b[0m"
+
+
   override fun angriffH(held: Held,gegner: Gegner) {
         var schaden = dmg.random()
         var treffer = Random.nextBoolean()
         if (treffer == true) {
-            inflictDmgH(gegner,schaden)
-
 
             println("\n$green${held.name}$greenreset schießt mit $yellow$modell$yellowreset und trifft $blue${gegner.name}${bluereset} mit $red$schaden$reset Schaden!!! \n")
-
+            inflictDmgH(gegner,schaden)
         } else
 
             println("\n$green${held.name}$greenreset hat mit $yellow$modell$yellowreset daneben geschossen!!!\n")

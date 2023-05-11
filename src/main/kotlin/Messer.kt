@@ -14,10 +14,9 @@ class Messer (modell: String, dmg: IntRange) : Weapon(modell, dmg) {
         var schaden = dmg.random()
         var treffer = Random.nextBoolean()
         if (treffer == true) {
-            inflictDmgH(gegner,schaden)
-
 
             println("\n$green${held.name}$greenreset wirft $yellow$modell$yellowreset und trifft $blue${gegner.name}$bluereset mit $red$schaden$reset Schaden!!!\n ")
+            inflictDmgH(gegner,schaden)
         } else
 
             println("\n$green${held.name}${greenreset}hat mit $yellow$modell$yellowreset daneben geworfen!!!\n")

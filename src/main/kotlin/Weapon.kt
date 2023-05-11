@@ -1,5 +1,4 @@
 
-
 open class Weapon {
 
     open var modell: String
@@ -12,7 +11,13 @@ open class Weapon {
         this.dmg = dmg
 
     }
+    val thumbsUp = "👍"
+    val thumbsDown = "👎"
+    val laughingCrying = "😂"
 
+    val happyFace = "\uD83D\uDE0A"
+    val grinningFace = "\uD83D\uDE00"
+    val heartEyes = "\uD83D\uDE0D"
     open fun angriffH(held: Held, gegner: Gegner) {}
     open fun angriffG(gegner: Gegner, held: Held) {}
     fun inflictDmgH(gegner: Gegner, damage: Int) {
@@ -26,7 +31,7 @@ open class Weapon {
             gegner.hp -= newDamageH
             if (gegner.hp <= 0) {
 
-              println("            $blue${gegner.name}$bluereset wurde getötet!!!")
+              println("       $blue${gegner.name}$bluereset wurde getötet!!! $laughingCrying NOOB")
             }
         }
     }

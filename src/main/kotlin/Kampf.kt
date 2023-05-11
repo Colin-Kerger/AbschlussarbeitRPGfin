@@ -1,3 +1,11 @@
+val happyFace = "\uD83D\uDE0A"
+val grinningFace = "\uD83D\uDE00"
+val heartEyes = "\uD83D\uDE0D"
+val thumbsUp = "👍"
+val thumbsDown = "👎"
+val laughingCrying = "😂"
+
+
 val red = "\u001b[31m"
 val redreset = "\u001b[0m"
 val green = "\u001b[32m"
@@ -11,14 +19,14 @@ val yellowreset = "\u001b[0m"
 
 var schrapnell: Schrapnell = Schrapnell("Schrapnelle",20..35)
 var moerser: Moerser = Moerser("KLOPF KLOPF",40..60)
-var splittergranate: Splittergranate = Splittergranate("LetzFetz",30..50)
+var splittergranate: Splittergranate = Splittergranate("LetzFetz",10..20)
 var messer: Messer = Messer("Wie durch Butter", 10..20)
 var minigun: Minigun = Minigun("Dicke Berta", 30..50)
 var aK47: AK47 = AK47("AK47", 10..20)
 var sniperrifle: Sniperweapon = Sniperweapon("IseeU", 22..30)
 var mgNest: MGNest = MGNest("BRRR BRRR", 20..50)
 var sniper: Sniper = Sniper("Eageleye", 100, 25, sniperrifle)
-var ghost: Held = Held("The Shadow", 100, 50, messer)
+var ghost: Ghost = Ghost("The Shadow", 100, 50, messer)
 var heavygunner: HeavyGunner = HeavyGunner("Johnny", 100, 100, minigun)
 var moerserschuetze: Moerserschuetze = Moerserschuetze("BOMBEN-BOB",100,70,moerser)
 
@@ -31,7 +39,7 @@ var mgschuetze2: MgSchuetze = MgSchuetze("Nick", 100, 40, mgNest)
 var mgschuetze3: MgSchuetze = MgSchuetze("Klaus", 100, 40, mgNest)
 
 var schutztuer: befestigteTuer = befestigteTuer("Schutztür",100,120,schrapnell)
-var endBoss: EndBoss = EndBoss("DAS DING",300,200,splittergranate)
+var endBoss: EndBoss = EndBoss("OVERLORD",300,200,splittergranate)
 
 var dasDing = mutableListOf<EndBoss>(endBoss)
 var tueroefferMob = mutableListOf<Moerserschuetze>(moerserschuetze)
@@ -70,6 +78,19 @@ fun hpCheckH(): Boolean {
 }
 
 fun frontline() {
+    println("${cyan } Willkommen meine Herren,schön das die es alle pünktlich zur Einsatzbesprechung geschafft haben.\n" +
+            " Johnny Sie ausnahmsweise auch mal. Da wir ja nun dann alle vollzählig, darf ich ihnen Maik von der technischen Aufklärung vorstellen\n" +
+            " Guten Morgen Sir!!!(im Chor)\n" +
+            " Das ist mein Sondereinsatzkommando bestehend aus:\n" +
+            " Johnny wie bereits erwähnt unser Heavygunner “Sir“(leichtes nicken)\n" +
+            " Eagleeye unser Sniper “Sir“ (salutiert) und\n" +
+            " The Shadow unser Ghost... (Stille) ... machen sie sich nichts draus er redet nicht viel aber sehr geschickt mit dem Messer.\n" +
+            " Unsere Satelitenaufklärung hat ein von Rebellen besetztes Dorf ausfindig gemacht.Laut unser Kontakt Person vor Ort       $cyanreset")
+
+    println("${red}Bereit zum Abflug?$redreset tippe ${green}SIR jawohl SIR$greenreset" )
+    var Missionstarten = readln()
+    Missionstarten = "SIR jawohl SIR"
+
     while (hpCheckG() && hpCheckH()) {
         kampf(heldenTrupp.random(), gegner = fussoldatenMob.random())
 
@@ -91,7 +112,7 @@ fun frontline() {
 
     }
 
-    println("\n!!!Die Frontline wurde erfolgreich eliminiert!!!\n ")
+    println("\n$red!!!${redreset}$thumbsUp${green}Die Frontline wurde erfolgreich eliminiert$greenreset$red$thumbsUp!!!$redreset\n ")
 
 }
 
@@ -101,7 +122,7 @@ fun medikitsmall() {
     for (held in heldenTrupp) {
         if (held.hp <= 20) {
             held.hp += 10
-            println("    $green${held.name}$greenreset hat sich um $red 10 $redreset Gesundheitspunkte geheilt")
+            println("    $green${held.name}$greenreset hat sich um $red 10 $redreset Gesundheitspunkte geheilt$happyFace")
         }
     }
 }
@@ -116,38 +137,41 @@ fun medikitnormal() {
 }
 
 fun medikitBig() {
-
-    heldenTrupp = heldenTrupp.filter { it.hp <= 100 }.toMutableList()
-
     for (held in heldenTrupp) {
-        held.hp += 80
-
+        if (held.hp <= 50) {
+            held.hp += 80
+        }
     }
 }
-
 fun armorReg() {
-    heldenTrupp = heldenTrupp.filter { it.armor >= 0 }.toMutableList()
-    for (held in heldenTrupp) {
+
+   for (held in heldenTrupp) {
+       if (held.armor <= 20)
         held.armor += 50
 
-        println(" $green${held.name}$greenreset hat Leben $red${held.hp}$redreset und Rüstung $cyan${held.armor}$cyanreset")
+        println(" $green${held.name}$greenreset hat Leben $red${held.hp}$redreset und Rüstung $cyan${held.armor}$cyanreset$happyFace")
     }
 
 
 }
 
 fun statusbericht() {
-    println("Sollen unsere Helden ihr Lager für die Nacht aufschlagen ? ja / nein ")
+    println("${red}Sollen unsere Helden ihr Lager für die Nacht aufschlagen ?$redreset$green ja / nein$greenreset ")
+    println()
     var lagerAufschlagen = readln()
     if ("ja" == lagerAufschlagen) {
-        println(
-            " Unsere Helden schlagen ihr lager für die Nacht auf. \n " +
-                    "Sie reparieren im Schein des Lagerfeuer ihre Rüstungen,\n" +
-                    " und legen sich später zur Erholen hin zum schlafen. "
+        println()
+        println("$cyan Unsere Helden schlagen ihr Lager für die Nacht auf. \n " +"Sie reparieren im Schein des Lagerfeuer ihre Rüstungen,\n"+" JAJA taktisch nicht von Vorteil$thumbsDown\n " + "und legen sich später zur Erholen hin zum schlafen. $cyanreset"
         )
+        println()
 
         medikitBig()
         armorReg()
+        println()
+        println("$cyan Am nächsten Morgen erwacht euer Trupp im Morgengrauen,\n " + "der frühe Vogel und so ihr wisst schon$laughingCrying $cyanreset \n" + " ${red}Zum weiter kämpfen!!$redreset ${green}tippe ok$greenreset" )
+        println()
+        var weiter = readln()
+        weiter = "ok"
     } else if ("nein" == lagerAufschlagen) {
         println("Der Trupp zieht weiter")
 
@@ -188,23 +212,27 @@ fun sturmZumTor() {
 
     }
 
-    println("\n    !!!Die MG-Nester wurden erfolgreich zerstört !!!\n ")
+    println("\n    $red!!!${redreset}${green}$thumbsUp Die MG-Nester wurden erfolgreich zerstört$greenreset $red$thumbsUp!!!$redreset\n ")
 
 }
 
 
 fun statusbericht2() {
-    println("Sollen unsere Helden ihre Stellung befestigen ? ja / nein ")
+    println("${red}Sollen unsere Helden ihre Stellung befestigen ?${redreset}$green ja / nein$greenreset ")
     var lagerAufschlagen = readln()
     if ("ja" == lagerAufschlagen) {
-        println(
-            " Unsere Helden befestigen ihre Stellung  für die Nacht auf. \n " +
-                    "Sie reparieren ihre Rüstungen,\n" +
-                    " und essen eine Kleinigkeit um wieder zu Kräften zu kommen . "
+        println()
+        println("$cyan Unsere Helden befestigen ihre Stellung für die Nacht. \n " + "Sie reparieren ihre Rüstungen,\n" + " und essen eine Kleinigkeit um wieder zu Kräften zu kommen.$cyanreset "
         )
+        println()
 
         medikitBig()
         armorReg()
+        println()
+        println("${cyan}Nachdem Johnny nach einer gefühlen Ewigkeit,\nendlich hinter einem kleinen Busch wieder wieder aufgetaucht ist,\nist der Trupp wieder vollzählig  und bereit   ")
+        println("${red}zum weiter kämpfen!$redreset$green tippe ok$greenreset" )
+        var weiter = readln()
+        weiter = "ok"
     } else if ("nein" == lagerAufschlagen) {
         println("Der Trupp zieht weiter")
 
@@ -247,23 +275,30 @@ fun dertürOeffner(){
 
     }
 
-    println("\n    !!!Die Schutztüre wurde in 1000 Stücke gesprengt  !!!\n ")
+    println("\n    $red!!!${redreset}${green}$thumbsUp Die Schutztüre wurde in 1000 Stücke gesprengt$greenreset$red$thumbsUp!!!$redreset\n ")
 
 }
 fun statusbericht3() {
-    println("Sollen unsere Helden das weitere Vorgehen planen ? ja / nein ")
+    println("${red}Sollen unsere Helden das weitere Vorgehen planen?$redreset$green ja / nein$greenreset ")
     var lagerAufschlagen = readln()
     if ("ja" == lagerAufschlagen) {
+        println()
         println(
-            " Unsere Helden besprechen ihre Taktik. \n " +
-                    "Sie checken ihre Ausrüstung ,\n" +
+            "$cyan Unsere Helden besprechen ihre Taktik. \n " +
+                    "Sie checken ihre Ausrüstung ,und fangen an sich gegenseitig zu pushen\n" +
                     " Eageleye: Geladen und entsichert!! Lasst und diesem H****sohn in den Arsch treten!!.\n" +
-                    "The Shadow: Ich werde ihm mit meinem Messer ein breites Lächeln von Ohr zu Ohr breiten\n" +
-                    "Johnny: Na dann mal los auf ihn wartet meine kleine Freundin  "
+                    " The Shadow: Ich werde ihm mit meinem Messer ein breites Lächeln von Ohr zu Ohr bereiten\n" +
+                    " Johnny: Na dann mal los auf ihn wartet meine kleine Freundin $laughingCrying$cyanreset "
         )
-
+        println()
         medikitBig()
         armorReg()
+        println()
+        println("$cyan Mit Adrenalin vollgepumpt und dem Kampfgeist eines Tigers stürmen sie auf in ihr letztes Gefecht welches  ")
+        println("${red }zu Ende gekämpft muss!$redreset$green tippe ok$greenreset" )
+        var weiter = readln()
+        weiter = "ok"
+
     } else if ("nein" == lagerAufschlagen) {
         println("Der Trupp zieht weiter")
 
@@ -303,7 +338,7 @@ while (hpCheckGEndBoss() && hpCheckH()) {
 
 }
 
-println("\n!!!Das Dorf wurde befreit .Die Schreckensherrschaft von dem DING ist vorbei ,\n" +
-        "und unsere Helden werden bejubelt und gefeiert !!!\n ")
+println("\n$red!!!$thumbsUp${redreset}${green}Das Dorf wurde befreit .Die Schreckensherrschaft von dem OVERLORD ist vorbei ,\n" +
+        "und unsere Helden werden bejubelt und gefeiert$greenreset $red$thumbsUp!!!$redreset\n ")
 
 }

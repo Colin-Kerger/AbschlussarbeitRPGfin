@@ -5,7 +5,7 @@ fun main(){
     statusbericht()
     sturmZumTor()
     statusbericht2()
-    dertürOeffner()
+     dertürOeffner()
     statusbericht3()
     endfight()
 }
