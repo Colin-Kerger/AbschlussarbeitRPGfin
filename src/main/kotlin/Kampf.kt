@@ -4,8 +4,15 @@ val heartEyes = "\uD83D\uDE0D"
 val thumbsUp = "👍"
 val thumbsDown = "👎"
 val laughingCrying = "😂"
+val angryFace = "\uD83D\uDE20"
+val confusedSmiley = "\uD83D\uDE15"
+val fearSmiley = "\uD83D\uDE28"
+val fireworks = "\uD83C\uDF86"
 
-
+val bold = "\u001b[1m"
+val boldreset = "0"
+val underline ="\u001b[4m"
+val underlinereset = "\u001b[0m"
 val red = "\u001b[31m"
 val redreset = "\u001b[0m"
 val green = "\u001b[32m"
@@ -24,9 +31,9 @@ var messer: Messer = Messer("Wie durch Butter", 10..20)
 var minigun: Minigun = Minigun("Dicke Berta", 30..50)
 var aK47: AK47 = AK47("AK47", 10..20)
 var sniperrifle: Sniperweapon = Sniperweapon("IseeU", 22..30)
-var mgNest: MGNest = MGNest("BRRR BRRR", 20..50)
+var mgNest: MGNest = MGNest("BRRR BRRR", 20..40)
 var sniper: Sniper = Sniper("Eageleye", 100, 25, sniperrifle)
-var ghost: Ghost = Ghost("The Shadow", 100, 50, messer)
+var ghost: Ghost = Ghost("Shadow", 100, 50, messer)
 var heavygunner: HeavyGunner = HeavyGunner("Johnny", 100, 100, minigun)
 var moerserschuetze: Moerserschuetze = Moerserschuetze("BOMBEN-BOB",100,70,moerser)
 
@@ -78,19 +85,55 @@ fun hpCheckH(): Boolean {
 }
 
 fun frontline() {
-    println("${cyan } Willkommen meine Herren,schön das die es alle pünktlich zur Einsatzbesprechung geschafft haben.\n" +
-            " Johnny Sie ausnahmsweise auch mal. Da wir ja nun dann alle vollzählig, darf ich ihnen Maik von der technischen Aufklärung vorstellen\n" +
-            " Guten Morgen Sir!!!(im Chor)\n" +
-            " Das ist mein Sondereinsatzkommando bestehend aus:\n" +
-            " Johnny wie bereits erwähnt unser Heavygunner “Sir“(leichtes nicken)\n" +
-            " Eagleeye unser Sniper “Sir“ (salutiert) und\n" +
-            " The Shadow unser Ghost... (Stille) ... machen sie sich nichts draus er redet nicht viel aber sehr geschickt mit dem Messer.\n" +
-            " Unsere Satelitenaufklärung hat ein von Rebellen besetztes Dorf ausfindig gemacht.Laut unser Kontakt Person vor Ort       $cyanreset")
+    println("\n                                    ${red}                           ${underline}${bold}DIE HERSCHAFT DES OVERLORDS$bluereset$underlinereset$redreset\n")
+    println()
+    println()
+    println(" In irgendeinem Zelt in irgendeinem gottverdammten Moskito verseuchten Jungle  \n" +
+            " ORTSZEIT: 0800\n"+
+            " ORT: GEHEIM")
+    println()
+    println()
 
-    println("${red}Bereit zum Abflug?$redreset tippe ${green}SIR jawohl SIR$greenreset" )
+    println("${cyan} “Ich bin Gunnery Sergeant Hartman\n" +
+            " ${cyan }Willkommen meine Herren, schön das die es alle pünktlich zur Einsatzbesprechung geschafft haben.\n" +
+            " Johnny Sie ausnahmsweise auch mal. Da wir ja nun dann alle vollzählig sind, darf ich ihnen Maik von der technischen Aufklärung vorstellen\n" +
+            " GUTEN MORGEN SIR!!!(im Chor)\n" +
+            " Das ist mein geliebtes Core bestehend aus:\n" +
+            " ${green}Johnny$greenreset ${cyan}wie bereits erwähnt unser Heavygunner“ “Sir“(leichtes nicken)\n" +
+            " ${green}“Eagleeye$greenreset$cyan unserem Sniper“ “Sir“ (salutiert) \n" +
+            " ${green}“Shadow$greenreset$cyan unserem Ghost... (Stille) ... machen sie sich nichts draus er redet nicht viel aber er ist sehr geschickt mit dem Messer.\n" +
+            " Und zu guter Letzt unser Mörserschütze ${green}BOMBEN-BOB“$greenreset$cyan “Lassen wir es krachen,Sir“\n"+
+            " “Unsere Satellitenaufklärung hat ein von Rebellen besetztes Dorf ausfindig gemacht.Laut unser Kontakt Person vor Ort\n" +
+            " wird das Dorf von einem Tyrannen der sich selber der ${blue}“OVERLORD“$bluereset$cyan nennt beherrscht.\n" +
+            " Ihre Aufgabe ist es:\n" +
+            " \n${yellow} 1. Die umliegenden patrouillierenden ${blue}Fußsoldaten$bluereset ${yellow}zu eliminieren$yellowreset\n" +
+            " ${yellow}2. Die befestigten ${blue}MG-Schützen${bluereset}$yellow zu eliminieren$yellowreset\n" +
+            " ${yellow}3. Die ${blue}Schutztür$bluereset${yellow} die uns den Weg ins Dorf versperrt zu sprengen$yellowreset\n" +
+            " ${yellow}4. Das Dorf von dem Tyrannen ${blue}“OVERLORD“$bluereset ${yellow}erlösen$yellowreset\n$cyanreset\n" +
+            " ${cyan}Alles soweit klar Männer und ")
+
+    println("${red} bereit zum Abflug?“$redreset tippe ein ${green}SIR jawohl SIR$greenreset" )
     var Missionstarten = readln()
     Missionstarten = "SIR jawohl SIR"
+    println(" ${cyan}Unser Helden besteigen den Heli und heben ab.\n" +
+            " ${green}BOMBEN-BOB$greenreset:“${cyan}Ich hab da letzten ne Granaten-Braut abgeschleppt,nur scheiße das wir immer nur so kurz an einem Ort sind.${cyanreset}“\n" +
+            " ${green}Johnny$greenreset:“${cyan}Ne scheiße ist die Scheiße an deinen Lippen da, das war bestimmst schon Scheiße an ihren Lippen${cyanreset}“\n " +
+            " ${green}BOMBEN-BOB$greenreset:“${cyan}F***U${angryFace}Ich hab mich beim rasieren geschnitten${cyanreset}“\n" +
+            " $cyan ALLLE$laughingCrying$laughingCrying$laughingCrying$laughingCrying$laughingCrying\n" +
+            " ${green}Pilot$greenreset:“${cyan}Männer kriegt euch wieder ein, wie sind da, seid ihr bereit\n" +
+            " ${red}zum abspringen?$redreset“ tippe ein “${green}ja${greenreset}“         ")
 
+    var abspringen = readln()
+    abspringen = "ja"
+
+    println(" ${cyan}Der Heli dreht ab\n" +
+            " Der Trupp geht in Stellung.\n" +
+            " ${green}Eageleye$greenreset:“${cyan}Patrouille auf 2 Uhr.${cyanreset}“\n" +
+            " ${green}Johnny$greenreset:“${cyan} Auf 3 gehts los 1...2...${cyanreset}“\n" +
+            " ${red}3$redreset tippe ein “${green}3$greenreset“     ")
+
+    var los = readln()
+    los = "3"
     while (hpCheckG() && hpCheckH()) {
         kampf(heldenTrupp.random(), gegner = fussoldatenMob.random())
 
@@ -168,10 +211,17 @@ fun statusbericht() {
         medikitBig()
         armorReg()
         println()
-        println("$cyan Am nächsten Morgen erwacht euer Trupp im Morgengrauen,\n " + "der frühe Vogel und so ihr wisst schon$laughingCrying $cyanreset \n" + " ${red}Zum weiter kämpfen!!$redreset ${green}tippe ok$greenreset" )
-        println()
-        var weiter = readln()
-        weiter = "ok"
+        println("$cyan Am nächsten Morgen erwacht euer Trupp im Morgengrauen,\n " + "der frühe Vogel und so ihr wisst schon$laughingCrying $cyanreset ")
+        println("$cyan Der Trupp pirscht sich durch das Unterholz bis sich der Jungle lichtet,\n" +
+                " sie erblicken 3 befestigte MG-NESTER.\n" +
+                "${green} Johnny$greenreset:“${cyan} Wo ist Shadow ??$cyanreset\n" +
+                " ${green}Eageleye$greenreset:“${cyan} Meinst du den der da gerade blutverschmiert einen abgetrennten Kopf in die Luft hält\n" +
+                " und über das ganze Gesicht am strahlen ist ,wie ein kleines Kind zu Weihnachten????$confusedSmiley\n" +
+                " Manchmal macht er mir echt Angst$cyanreset$fearSmiley“\n" +
+                " ${green}Johnny$greenreset:“${cyan}Alter woher soll ich das wissen du hast das verdammte Fernglas!! LOS IHM NACH!!“ ")
+        println("${red}Um Shadow zu folgen$redreset tippe ein  “${green}go$greenreset“   ")
+        var go = readln()
+        go= "go"
     } else if ("nein" == lagerAufschlagen) {
         println("Der Trupp zieht weiter")
 
@@ -229,10 +279,20 @@ fun statusbericht2() {
         medikitBig()
         armorReg()
         println()
-        println("${cyan}Nachdem Johnny nach einer gefühlen Ewigkeit,\nendlich hinter einem kleinen Busch wieder wieder aufgetaucht ist,\nist der Trupp wieder vollzählig  und bereit   ")
-        println("${red}zum weiter kämpfen!$redreset$green tippe ok$greenreset" )
-        var weiter = readln()
-        weiter = "ok"
+        println(" ${cyan}Nachdem Johnny nach einer gefühlen Ewigkeit,\nendlich hinter einem kleinen Busch wieder aufgetaucht ist,\nist der Trupp wieder vollzählig  und bereit   ")
+        println(" ${cyan}für einer kleinen Lagebesprechung die zur Folge hat das nun BOMBEN-BOB seinen großen Auftritt\n" +
+                " er bringt seinen Mörser in Stellung lutscht zwischen durch ein paarmal an seinem Zeigefinger und hält ihn in die Luft\n" +
+                " ${green}Johnny$greenreset:“${cyan}Wird das heute noch was?? Ich will heute abend zum SUPERBOWL wieder zuhause sein!!\n" +
+                " ${green}Eageleye$greenreset:“${cyan}Jetzt lass ihn doch mal in Ruhe seine Arbeit machen,\n" +
+                " oder willst du das es so endet wie damals im Mexico??\n" +
+                " Wo er dir weil du ihn wiedermal gehetzt hast dir den halben Arsch weg gesprengt hat??!!${cyanreset}“\n" +
+                " ${green}Johnny$greenreset:“${cyan}Im Winter wenn es kalt wir merke ich das scheiß Schrapnell ab und an immer noch!!${cyanreset}“\n" +
+                "${green}BOMBEN-BON$greenreset:“${cyan}Das Feuerwerk$fireworks ist bereit$cyanreset“           ")
+                println("${red}Willst du es knallen?$redreset tippe ein “${green}ja$greenreset ")
+        var feuerwerk = readln()
+        feuerwerk = "ja"
+
+
     } else if ("nein" == lagerAufschlagen) {
         println("Der Trupp zieht weiter")
 
