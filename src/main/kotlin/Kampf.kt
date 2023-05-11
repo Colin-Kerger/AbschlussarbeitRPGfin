@@ -9,9 +9,9 @@ val cyanreset = "\u001b[0m"
 val yellow = "\u001b[33m"
 val yellowreset = "\u001b[0m"
 
-var schrapnell: Schrapnell = Schrapnell("Schrapnelle",7..15)
-var moerser: Moerser = Moerser("KLOPF KLOPF",60..80)
-var splittergranate: Splittergranate = Splittergranate("LetzFetz",15..25)
+var schrapnell: Schrapnell = Schrapnell("Schrapnelle",20..35)
+var moerser: Moerser = Moerser("KLOPF KLOPF",40..60)
+var splittergranate: Splittergranate = Splittergranate("LetzFetz",30..50)
 var messer: Messer = Messer("Wie durch Butter", 10..20)
 var minigun: Minigun = Minigun("Dicke Berta", 30..50)
 var aK47: AK47 = AK47("AK47", 10..20)
@@ -20,7 +20,7 @@ var mgNest: MGNest = MGNest("BRRR BRRR", 20..50)
 var sniper: Sniper = Sniper("Eageleye", 100, 25, sniperrifle)
 var ghost: Held = Held("The Shadow", 100, 50, messer)
 var heavygunner: HeavyGunner = HeavyGunner("Johnny", 100, 100, minigun)
-var moerserschuetze: Moerserschuetze = Moerserschuetze("BOMBEN-BOB",100,150,moerser)
+var moerserschuetze: Moerserschuetze = Moerserschuetze("BOMBEN-BOB",100,70,moerser)
 
 var soldat1: Fusssoldat = Fusssoldat("Larry", 80, 45, aK47)
 var soldat2: Fusssoldat = Fusssoldat("Hugo", 80, 45, aK47)
@@ -30,9 +30,10 @@ var mgschuetze1: MgSchuetze = MgSchuetze("Bobby", 100, 40, mgNest)
 var mgschuetze2: MgSchuetze = MgSchuetze("Nick", 100, 40, mgNest)
 var mgschuetze3: MgSchuetze = MgSchuetze("Klaus", 100, 40, mgNest)
 
-var schutztuer: befestigteTuer = befestigteTuer("Schutztür",100,200,schrapnell)
+var schutztuer: befestigteTuer = befestigteTuer("Schutztür",100,120,schrapnell)
 var endBoss: EndBoss = EndBoss("DAS DING",300,200,splittergranate)
 
+var dasDing = mutableListOf<EndBoss>(endBoss)
 var tueroefferMob = mutableListOf<Moerserschuetze>(moerserschuetze)
 var tuersteherMob = mutableListOf<befestigteTuer>(schutztuer)
 var fussoldatenMob = mutableListOf<Fusssoldat>(soldat1, soldat2, soldat3)
@@ -240,8 +241,8 @@ fun dertürOeffner(){
             ruekkampf(tuersteherMob.random(), tueroefferMob.random())
             medikitnormal()
         }
-        for (held in tuersteherMob) {
-            println("       $green${held.name}$greenreset hat Leben $red${held.hp}$redreset und Rüstung $cyan${held.armor}$cyanreset")
+        for (held in tueroefferMob) {
+            println("       $green${moerserschuetze.name}$greenreset hat Leben $red${moerserschuetze.hp}$redreset und Rüstung $cyan${moerserschuetze.armor}$cyanreset")
         }
 
     }
@@ -249,4 +250,60 @@ fun dertürOeffner(){
     println("\n    !!!Die Schutztüre wurde in 1000 Stücke gesprengt  !!!\n ")
 
 }
+fun statusbericht3() {
+    println("Sollen unsere Helden das weitere Vorgehen planen ? ja / nein ")
+    var lagerAufschlagen = readln()
+    if ("ja" == lagerAufschlagen) {
+        println(
+            " Unsere Helden besprechen ihre Taktik. \n " +
+                    "Sie checken ihre Ausrüstung ,\n" +
+                    " Eageleye: Geladen und entsichert!! Lasst und diesem H****sohn in den Arsch treten!!.\n" +
+                    "The Shadow: Ich werde ihm mit meinem Messer ein breites Lächeln von Ohr zu Ohr breiten\n" +
+                    "Johnny: Na dann mal los auf ihn wartet meine kleine Freundin  "
+        )
 
+        medikitBig()
+        armorReg()
+    } else if ("nein" == lagerAufschlagen) {
+        println("Der Trupp zieht weiter")
+
+    }
+
+}
+
+
+fun hpCheckGEndBoss(): Boolean {
+    dasDing = dasDing.filter { it.hp > 0 }.toMutableList()
+    if (dasDing.isNotEmpty()) {
+
+        return true
+    }
+    return false
+}
+
+fun endfight(){
+while (hpCheckGEndBoss() && hpCheckH()) {
+    kampf(heldenTrupp.random(), gegner = dasDing.random())
+
+    for (gegner in dasDing) {
+        println("       $blue${endBoss.name}$bluereset hat Leben $red${endBoss.hp}$redreset und Rüstung $cyan${endBoss.armor}$cyanreset")
+    }
+
+    if (hpCheckGEndBoss()) {
+
+        ruekkampf(dasDing.random(), heldenTrupp.random())
+        medikitsmall()
+    }
+
+
+
+    for (held in heldenTrupp) {
+        println("       $green${held.name}$greenreset hat Leben $red${held.hp}$redreset und Rüstung $cyan${held.armor}$cyanreset")
+    }
+
+}
+
+println("\n!!!Das Dorf wurde befreit .Die Schreckensherrschaft von dem DING ist vorbei ,\n" +
+        "und unsere Helden werden bejubelt und gefeiert !!!\n ")
+
+}

@@ -8,9 +8,9 @@ class Schrapnell (modell:String, dmg:IntRange):Weapon(modell,dmg) {
             inflictDmgG(held,schaden)
 
 
-            println("\n$blue${gegner.name}$bluereset schießt mit der $yellow$modell$yellowreset und trifft $green${held.name}$greenreset mit $red$schaden$redreset Schaden!!! \n")
+            println("\n$blue${gegner.name}$bluereset schmeißt  $yellow$modell$yellowreset zurück und trifft $green${held.name}$greenreset mit $red$schaden$redreset Schaden!!! \n")
         } else
-            println("\n$blue${gegner.name}$bluereset hat mit der$yellow$modell$yellowreset daneben geschossen!!!\n")
+            println("\n$blue${gegner.name}$bluereset hat mit $yellow$modell$yellowreset daneben geschossen!!!\n")
     }
 
 
