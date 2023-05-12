@@ -66,8 +66,7 @@ var endBoss: EndBoss = EndBoss("OVERLORD", 300, 200, splittergranate)           
 var dasDing = mutableListOf<EndBoss>(endBoss)
 var tueroefferMob = mutableListOf<Moerserschuetze>(moerserschuetze)
 var tuersteherMob = mutableListOf<befestigteTuer>(schutztuer)
-var fussoldatenMob = mutableListOf<Fusssoldat>(soldat1, soldat2, soldat3
-)                           //Listen der Heldentruppen und Gegnertruppen
+var fussoldatenMob = mutableListOf<Fusssoldat>(soldat1, soldat2, soldat3)                           //Listen der Heldentruppen und Gegnertruppen
 var heldenTrupp = mutableListOf<Held>(sniper, heavygunner, ghost)
 var mgNestMob = mutableListOf<MgSchuetze>(mgschuetze1, mgschuetze2, mgschuetze3)
 
