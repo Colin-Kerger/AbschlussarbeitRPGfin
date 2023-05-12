@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8212f62d-c76a-4819-b6a6-9be99c638d4b" name="Changes" comment="end kampf&#10;11.05.2023">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/BefestigteTuer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/BefestigteTuer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/EndBoss.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/EndBoss.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Fußsoldat.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Fußsoldat.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Gegner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Gegner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Ghost.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Ghost.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/HeavyGunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/HeavyGunner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Held.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Held.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Kampf.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Kampf.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Weapon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Weapon.kt" afterDir="false" />
-    </list>
+    <list default="true" id="8212f62d-c76a-4819-b6a6-9be99c638d4b" name="Changes" comment="end kampf&#10;11.05.2023" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -257,7 +247,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683863851717</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="end kampf&#10;11.05.2023">
+      <created>1683865849978</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1683865849978</updated>
+    </task>
+    <task id="LOCAL-00028" summary="end kampf&#10;11.05.2023">
+      <created>1683867489002</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1683867489002</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -15,12 +15,12 @@ open class Weapon {                                     // Hauptklasse Waffe
 
     open fun angriffH(held: Held, gegner: Gegner) {}
 
-    // Methoden für den Kampf wer greift wen an
+                                                                // Methoden für den Kampf wer greift wen an
     open fun angriffG(gegner: Gegner, held: Held) {}
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Methoden für die Rüstungsreduzierung und Lebensreduzierung
+                                                                // Methoden für die Rüstungsreduzierung und Lebensreduzierung
     fun inflictDmgH(gegner: Gegner, damage: Int) {
         if (gegner.armor >= damage) {
             gegner.armor -= damage
