@@ -1,37 +1,35 @@
-
 open class Weapon {
 
-    open var modell: String
+    open var modell: String                             // Variablen für die Eigenschaften
     open var dmg: IntRange
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    constructor(modell: String, dmg: IntRange) {
-
+    constructor(modell: String, dmg: IntRange) {        // Constructor
         this.modell = modell
         this.dmg = dmg
-
     }
-    val thumbsUp = "👍"
-    val thumbsDown = "👎"
-    val laughingCrying = "😂"
 
-    val happyFace = "\uD83D\uDE0A"
-    val grinningFace = "\uD83D\uDE00"
-    val heartEyes = "\uD83D\uDE0D"
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
     open fun angriffH(held: Held, gegner: Gegner) {}
+
+                                                        // Methoden für den Kampf wer greift wen an
     open fun angriffG(gegner: Gegner, held: Held) {}
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                                                    // Methoden für die Rüstungsreduzierung und Lebensreduzierung
     fun inflictDmgH(gegner: Gegner, damage: Int) {
         if (gegner.armor >= damage) {
             gegner.armor -= damage
-
-
         } else if (gegner.armor < damage) {
             var newDamageH = damage - gegner.armor
             gegner.armor = 0
             gegner.hp -= newDamageH
             if (gegner.hp <= 0) {
-
-              println("       $blue${gegner.name}$bluereset wurde getötet!!! $laughingCrying NOOB")
+                println("       $blue${gegner.name}$bluereset wurde getötet!!! $laughingCrying NOOB")
             }
         }
     }
@@ -52,3 +50,4 @@ open class Weapon {
     }
 
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

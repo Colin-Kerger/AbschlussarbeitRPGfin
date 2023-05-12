@@ -73,7 +73,7 @@ var mgNestMob = mutableListOf<MgSchuetze>(mgschuetze1, mgschuetze2, mgschuetze3)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 fun kampf(held: Held, gegner: Gegner) {
     held.weapon.angriffH(held, gegner)
-}                                                   //Funktionen für das Kampfgeschehen Held vs Gegner und andersrum werden überschrieben
+}                                                   //Funktionen für das Kampfgeschehen Held vs Gegner und andersrum
 fun ruekkampf(gegner: Gegner, held: Held) {
     gegner.weapon.angriffG(gegner, held)
 }
