@@ -340,7 +340,7 @@ fun statusbericht2() {
         println(
             " ${cyan}für eine kleine Lagebesprechung die zur Folge hat das nun BOMBEN-BOB seinen großen Auftritt hat\n" +
                     " er bringt seinen Mörser in Stellung lutscht zwischen durch ein paarmal an seinem Zeigefinger und hält ihn in die Luft\n" +
-                    " ${green}Johnny$greenreset:“${cyan}Wird das heute noch was?? Ich will heute abend zum SUPERBOWL wieder zuhause sein!!\n" +
+                    " ${green}Johnny$greenreset:“${cyan}Wird das heute noch was?? Ich will heute Abend zum SUPERBOWL wieder zuhause sein!!\n" +
                     " ${green}Eageleye$greenreset:“${cyan}Jetzt lass ihn doch mal in Ruhe seine Arbeit machen,\n" +
                     " oder willst du das es so endet wie damals im Mexico??\n" +
                     " Wo er dir weil du ihn wiedermal gehetzt hast, dir den halben Arsch weg gesprengt hat??!!${cyanreset}“\n" +
