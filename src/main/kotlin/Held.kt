@@ -1,18 +1,19 @@
-open class Held {
-
+open class Held {                   // Hauptklasse Held
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     open var name: String
-    open var hp: Int
+    open var hp: Int                // Eigenschaften
     open var armor: Int
     open var weapon: Weapon
 
-    constructor(name: String, hp: Int, armor: Int,weapon: Weapon ) {
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    constructor(name: String, hp: Int, armor: Int, weapon: Weapon) {
 
         this.name = name
-        this.hp = hp
+        this.hp = hp                 // Constructor
         this.armor = armor
         this.weapon = weapon
     }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }
 

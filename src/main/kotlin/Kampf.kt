@@ -66,7 +66,11 @@ var endBoss: EndBoss = EndBoss("OVERLORD", 300, 200, splittergranate)           
 var dasDing = mutableListOf<EndBoss>(endBoss)
 var tueroefferMob = mutableListOf<Moerserschuetze>(moerserschuetze)
 var tuersteherMob = mutableListOf<befestigteTuer>(schutztuer)
-var fussoldatenMob = mutableListOf<Fusssoldat>(soldat1, soldat2, soldat3)                           //Listen der Heldentruppen und Gegnertruppen
+var fussoldatenMob = mutableListOf<Fusssoldat>(
+    soldat1,
+    soldat2,
+    soldat3
+)                           //Listen der Heldentruppen und Gegnertruppen
 var heldenTrupp = mutableListOf<Held>(sniper, heavygunner, ghost)
 var mgNestMob = mutableListOf<MgSchuetze>(mgschuetze1, mgschuetze2, mgschuetze3)
 
@@ -74,13 +78,14 @@ var mgNestMob = mutableListOf<MgSchuetze>(mgschuetze1, mgschuetze2, mgschuetze3)
 fun kampf(held: Held, gegner: Gegner) {
     held.weapon.angriffH(held, gegner)
 }                                                   //Funktionen für das Kampfgeschehen Held vs Gegner und andersrum
+
 fun ruekkampf(gegner: Gegner, held: Held) {
     gegner.weapon.angriffG(gegner, held)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                            // Funktionen für die Medikits
+// Funktionen für die Medikits
 fun medikitsmall() {// klein
 
     for (held in heldenTrupp) {
@@ -110,7 +115,7 @@ fun medikitBig() {
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                                //  funktion für die Rüstungsregeneration
+//  funktion für die Rüstungsregeneration
 fun armorReg() {
     for (held in heldenTrupp) {
         if (held.armor <= 20)
@@ -121,7 +126,7 @@ fun armorReg() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                            // Funktionen für die Abfrage OB ein Held oder Gegner noch lebt für unterschiedliche Listen
+// Funktionen für die Abfrage OB ein Held oder Gegner noch lebt für unterschiedliche Listen
 fun hpCheckG(): Boolean {
     fussoldatenMob = fussoldatenMob.filter { it.hp > 0 }.toMutableList()
     if (fussoldatenMob.isNotEmpty()) {
@@ -162,6 +167,7 @@ fun hpCheckGTuer(): Boolean {
     }
     return false
 }
+
 fun hpCheckGEndBoss(): Boolean {
     dasDing = dasDing.filter { it.hp > 0 }.toMutableList()
     if (dasDing.isNotEmpty()) {
@@ -173,7 +179,7 @@ fun hpCheckGEndBoss(): Boolean {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-                                                    //Funktion für 1. KampfFunktion und Einleitung
+//Funktion für 1. KampfFunktion und Einleitung
 
 fun frontline() {
     println("\n                                    $red                           ${underline}${bold}DIE HERSCHAFT DES OVERLORDS$bluereset$underlinereset$redreset\n")
@@ -259,7 +265,7 @@ fun frontline() {
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                                 //Funktion für den 1. Statusbericht
+//Funktion für den 1. Statusbericht
 fun statusbericht() {
     println("${red}Sollen unsere Helden ihr Lager für die Nacht aufschlagen ?$redreset$green ja / nein$greenreset ")
     println()
@@ -295,7 +301,7 @@ fun statusbericht() {
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                            //Funktion für 2. Kampffunktion
+//Funktion für 2. Kampffunktion
 fun sturmZumTor() {
     while (hpCheckGmg() && hpCheckH()) {
         kampf(heldenTrupp.random(), gegner = mgNestMob.random())
@@ -324,7 +330,7 @@ fun sturmZumTor() {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                        // Funktion für 2. Statusbericht
+// Funktion für 2. Statusbericht
 fun statusbericht2() {
     println("${red}Sollen unsere Helden ihre Stellung befestigen ?${redreset}$green ja / nein$greenreset ")
     var lagerAufschlagen = readln()
@@ -357,8 +363,8 @@ fun statusbericht2() {
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                                    // Funktion für 3. Kampffunktion
-fun dertürOeffner() {
+// Funktion für 3. Kampffunktion
+fun dertuerOeffner() {
     while (hpCheckGTuer() && hpCheckHTuer()) {
         kampf(tueroefferMob.random(), gegner = tuersteherMob.random())
         for (gegner in tuersteherMob) {
@@ -376,7 +382,7 @@ fun dertürOeffner() {
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                            // Funktion für 3. Statusbericht
+// Funktion für 3. Statusbericht
 fun statusbericht3() {
     println("${red}Sollen unsere Helden das weitere Vorgehen planen?$redreset$green ja / nein$greenreset ")
     var lagerAufschlagen = readln()
@@ -403,7 +409,7 @@ fun statusbericht3() {
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                        // Funktion für den ENDFIGHT
+// Funktion für den ENDFIGHT
 
 fun endfight() {
     while (hpCheckGEndBoss() && hpCheckH()) {
@@ -431,12 +437,14 @@ fun endfight() {
         "\n$red!!!$thumbsUp${redreset}${green}Das Dorf wurde befreit .Die Schreckensherrschaft von dem ${blue}OVERLORD$bluereset$green ist vorbei ,\n" +
                 "und unsere Helden werden bejubelt und gefeiert$greenreset $red$thumbsUp!!!$redreset\n "
     )
-            println("${cyan}Über Funk$cyanreset:“${green}Gunnery Sergeant Hartman$greenreset${cyan} hier saubere Arbeit Männer!! Zeit nachhause zu kommen$cyanreset\n" +
-                    "${green}Johnny$greenreset:“${cyan}Los beeilt euch der Heli wartet vielleicht bekomme ich noch die 2. Hälfte vom SUPERBOWL mit!${cyanreset}“\n" +
-                    "${green}BOMBEN-BOB$greenreset:“${cyan}ABER !!...ABER!! Seht ihr nicht diese ganzen hübschen ${heartEyes}Mädels$heartEyes!!${cyanreset}“\n" +
-                    "${green}Shadow$greenreset:“${cyan}Und ich sehe dein Gesicht willst du dich noch mehr$cyanreset“${cyan}beim rasieren schneiden$cyanreset“${cyan}?\n" +
-                    "${green}BOMBEN-BOB$greenreset:“${cyan}Ist schlimmer geworden, ne?$cyanreset“\n" +
-                    "${green}Eageleye$greenreset:“${cyan}Deine Frau wird bestimmt nix merken. $cyanreset“\n" +
-                    "${cyan}ALLLE $laughingCrying$laughingCrying$laughingCrying$laughingCrying   ")
+    println(
+        "${cyan}Über Funk$cyanreset:“${green}Gunnery Sergeant Hartman$greenreset${cyan} hier saubere Arbeit Männer!! Zeit nachhause zu kommen$cyanreset\n" +
+                "${green}Johnny$greenreset:“${cyan}Los beeilt euch der Heli wartet vielleicht bekomme ich noch die 2. Hälfte vom SUPERBOWL mit!${cyanreset}“\n" +
+                "${green}BOMBEN-BOB$greenreset:“${cyan}ABER !!...ABER!! Seht ihr nicht diese ganzen hübschen ${heartEyes}Mädels$heartEyes!!${cyanreset}“\n" +
+                "${green}Shadow$greenreset:“${cyan}Und ich sehe dein Gesicht willst du dich noch mehr$cyanreset“${cyan}beim rasieren schneiden$cyanreset“${cyan}?\n" +
+                "${green}BOMBEN-BOB$greenreset:“${cyan}Ist schlimmer geworden, ne?$cyanreset“\n" +
+                "${green}Eageleye$greenreset:“${cyan}Deine Frau wird bestimmt nix merken. $cyanreset“\n" +
+                "${cyan}ALLLE $laughingCrying$laughingCrying$laughingCrying$laughingCrying   "
+    )
 
 }
