@@ -247,9 +247,6 @@ fun frontline() {
             ruekkampf(fussoldatenMob.random(), heldenTrupp.random())
             medikitsmall()
         }
-
-
-
         for (held in heldenTrupp) {
             println("       $green${held.name}$greenreset hat Leben $red${held.hp}$redreset und Rüstung $cyan${held.armor}$cyanreset")
         }
@@ -280,7 +277,7 @@ fun statusbericht() {
         println(
             "$cyan Der Trupp pirscht sich durch das Unterholz bis sich der Jungle lichtet,\n" +
                     " sie erblicken 3 befestigte MG-NESTER.\n" +
-                    "${green} Johnny$greenreset:“${cyan} Wo ist Shadow ??$cyanreset\n" +
+                    "${green} Johnny$greenreset:“${cyan} Wo ist Shadow ??$cyanreset“\n" +
                     " ${green}Eageleye$greenreset:“${cyan} Meinst du den der da gerade blutverschmiert einen abgetrennten Kopf in die Luft hält\n" +
                     " und über das ganze Gesicht am strahlen ist ,wie ein kleines Kind zu Weihnachten????$confusedSmiley\n" +
                     " Manchmal macht er mir echt Angst$cyanreset$fearSmiley“\n" +
