@@ -343,9 +343,9 @@ fun statusbericht2() {
                     " ${green}Johnny$greenreset:“${cyan}Wird das heute noch was?? Ich will heute abend zum SUPERBOWL wieder zuhause sein!!\n" +
                     " ${green}Eageleye$greenreset:“${cyan}Jetzt lass ihn doch mal in Ruhe seine Arbeit machen,\n" +
                     " oder willst du das es so endet wie damals im Mexico??\n" +
-                    " Wo er dir weil du ihn wiedermal gehetzt hast dir den halben Arsch weg gesprengt hat??!!${cyanreset}“\n" +
+                    " Wo er dir weil du ihn wiedermal gehetzt hast, dir den halben Arsch weg gesprengt hat??!!${cyanreset}“\n" +
                     " ${green}Johnny$greenreset:“${cyan}Im Winter wenn es kalt wir merke ich das scheiß Schrapnell ab und an immer noch!!${cyanreset}“\n" +
-                    " ${green}BOMBEN-BON$greenreset:“${cyan}Das Feuerwerk$fireworks ist bereit$cyanreset“           "
+                    " ${green}BOMBEN-BOB$greenreset:“${cyan}Das Feuerwerk$fireworks ist bereit$cyanreset“           "
         )
         println("${red}Willst du es knallen lassen?$redreset tippe ein “${green}ja$greenreset ")
         var feuerwerk = readln()
@@ -427,8 +427,7 @@ fun endfight() {
     }
 
     println(
-        "\n$red!!!$thumbsUp${redreset}${green}Das Dorf wurde befreit .Die Schreckensherrschaft von dem ${blue}OVERLORD$bluereset$green ist vorbei ,\n" +
-                "und unsere Helden werden bejubelt und gefeiert$greenreset $red$thumbsUp!!!$redreset\n "
+        "\n$red!!!$thumbsUp${redreset}${green}Das Dorf wurde befreit .Die Schreckensherrschaft von dem ${blue}OVERLORD$bluereset$green ist vorbei, und unsere Helden werden bejubelt und gefeiert$greenreset $red$thumbsUp!!!$redreset\n "
     )
     println(
         "${cyan}Über Funk$cyanreset:“${green}Gunnery Sergeant Hartman$greenreset${cyan} hier saubere Arbeit Männer!! Zeit nachhause zu kommen$cyanreset\n" +
