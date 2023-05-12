@@ -176,7 +176,7 @@ fun hpCheckGEndBoss(): Boolean {
                                                     //Funktion für 1. KampfFunktion und Einleitung
 
 fun frontline() {
-    println("\n                                    ${red}                           ${underline}${bold}DIE HERSCHAFT DES OVERLORDS$bluereset$underlinereset$redreset\n")
+    println("\n                                    $red                           ${underline}${bold}DIE HERSCHAFT DES OVERLORDS$bluereset$underlinereset$redreset\n")
     println()
     println()
     println(
@@ -188,12 +188,12 @@ fun frontline() {
     println()
 
     println(
-        "${cyan} “Ich bin Gunnery Sergeant Hartman\n" +
+        "$cyan “Ich bin Gunnery Sergeant Hartman\n" +
                 " ${cyan}Willkommen meine Herren, schön das sie es alle pünktlich zur Einsatzbesprechung geschafft haben.\n" +
                 " Johnny Sie ausnahmsweise auch mal. Da wir ja nun dann alle vollzählig sind, darf ich ihnen Maik von der technischen Aufklärung vorstellen\n" +
                 " GUTEN MORGEN SIR!!!(im Chor)\n" +
                 " Das ist mein geliebtes Core bestehend aus:\n" +
-                " “${green}Johnny$greenreset ${cyan}wie bereits erwähnt unser Heavygunner“ “Sir“(leichtes nicken)\n" +
+                " “${green}Johnny$greenreset ${cyan}wie bereits erwähnt unser Heavy gunner“ “Sir“(leichtes nicken)\n" +
                 " “${green}Eagleeye$greenreset$cyan unserem Sniper“ “Sir“ (salutiert) \n" +
                 " “${green}Shadow$greenreset$cyan unserem Ghost... (Stille) ... machen sie sich nichts draus er redet nicht viel aber er ist sehr geschickt mit dem Messer.\n" +
                 " Und zu guter Letzt unser Mörserschütze ${green}BOMBEN-BOB“$greenreset$cyan “Lassen wir es krachen,Sir“\n" +
@@ -208,8 +208,8 @@ fun frontline() {
     )
 
     println("${red} bereit zum Abflug?“$redreset tippe ein ${green}SIR jawohl SIR$greenreset")
-    var Missionstarten = readln()
-    Missionstarten = "SIR jawohl SIR"
+    var missionstarten = readln()
+    missionstarten = "SIR jawohl SIR"
     println(
         " ${cyan}Unser Helden besteigen den Heli und heben ab.\n" +
                 " ${green}BOMBEN-BOB$greenreset:“${cyan}Ich hab da letzten ne granaten-Braut abgeschleppt,nur scheiße das wir immer nur so kurz an einem Ort sind.${cyanreset}“\n" +
@@ -267,14 +267,14 @@ fun statusbericht() {
     if ("ja" == lagerAufschlagen) {
         println()
         println(
-            "$cyan Unsere Helden schlagen ihr Lager für die Nacht auf. \n " + "Sie reparieren im Schein des Lagerfeuer ihre Rüstungen,\n" + " JAJA taktisch nicht von Vorteil$thumbsDown\n " + "und legen sich später zum Erholen hin zum schlafen. $cyanreset"
+            "$cyan Unsere Helden schlagen ihr Lager für die Nacht auf. \n Sie reparieren im Schein des Lagerfeuer ihre Rüstungen,\n JAJA taktisch nicht von Vorteil$thumbsDown\n und legen sich später zum Erholen hin zum schlafen. $cyanreset"
         )
         println()
 
         medikitBig()
         armorReg()
         println()
-        println("$cyan Am nächsten Morgen erwacht euer Trupp im Morgengrauen,\n " + "der frühe Vogel und so ihr wisst schon$laughingCrying $cyanreset ")
+        println("$cyan Am nächsten Morgen erwacht euer Trupp im Morgengrauen,\n der frühe Vogel und so ihr wisst schon$laughingCrying $cyanreset ")
         println(
             "$cyan Der Trupp pirscht sich durch das Unterholz bis sich der Jungle lichtet,\n" +
                     " sie erblicken 3 befestigte MG-NESTER.\n" +
@@ -433,7 +433,7 @@ fun endfight() {
     )
             println("${cyan}Über Funk$cyanreset:“${green}Gunnery Sergeant Hartman$greenreset${cyan} hier saubere Arbeit Männer!! Zeit nachhause zu kommen$cyanreset\n" +
                     "${green}Johnny$greenreset:“${cyan}Los beeilt euch der Heli wartet vielleicht bekomme ich noch die 2. Hälfte vom SUPERBOWL mit!${cyanreset}“\n" +
-                    "${green}BOMBEN-BOB$greenreset:“${cyan}ABER !!...ABER!! Seht ihr nicht diese ganzen hübschen Mädelns!!${cyanreset}“\n" +
+                    "${green}BOMBEN-BOB$greenreset:“${cyan}ABER !!...ABER!! Seht ihr nicht diese ganzen hübschen ${heartEyes}Mädels$heartEyes!!${cyanreset}“\n" +
                     "${green}Shadow$greenreset:“${cyan}Und ich sehe dein Gesicht willst du dich noch mehr$cyanreset“${cyan}beim rasieren schneiden$cyanreset“${cyan}?\n" +
                     "${green}BOMBEN-BOB$greenreset:“${cyan}Ist schlimmer geworden, ne?$cyanreset“\n" +
                     "${green}Eageleye$greenreset:“${cyan}Deine Frau wird bestimmt nix merken. $cyanreset“\n" +

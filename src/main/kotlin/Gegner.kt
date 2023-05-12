@@ -1,7 +1,7 @@
 open class Gegner {                             //Hauptklasse Gegner
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     open var name: String
-    open var hp: Int
+    open var hp: Int                            // Eigenschaften der klasse
     open var armor: Int
     open var weapon: Weapon
 

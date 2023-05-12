@@ -13,24 +13,7 @@ open class Held {
         this.weapon = weapon
     }
 
-    open fun medikitsmall(held: Held) {
 
-        var hpreg = held.hp / 100 * 15 + hp
-        println("$name wurde um $hpreg geheilt")
-
-    }
-
-    open fun wahrscheinlichkeitZuTreffen(gegner: Gegner) {
-       println("Schiesen")
-    }
-
-   open fun heavyatk(gegner: Gegner) {
-       println("schwererAngriff")}
-
-    open fun granatewerfen(gegner: Gegner) {
-
-        println("$name schmeist eine Granate  ")
-    }
 }
 
 
