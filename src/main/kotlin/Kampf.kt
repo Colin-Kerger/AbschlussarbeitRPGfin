@@ -337,9 +337,9 @@ fun statusbericht2() {
         medikitBig()
         armorReg()
         println()
-        println(" ${cyan}Nachdem Johnny nach einer gefühlen Ewigkeit,\n endlich hinter einem kleinen Busch wieder aufgetaucht ist,\n ist der Trupp wieder vollzählig  und bereit   ")
+        println(" ${cyan}Nachdem Johnny nach einer gefühlen Ewigkeit,\n endlich hinter einem kleinen Busch wieder aufgetaucht ist,\n ist der Trupp nun vollzählig  und bereit    ")
         println(
-            " ${cyan}für einer kleinen Lagebesprechung die zur Folge hat das nun BOMBEN-BOB seinen großen Auftritt hat\n" +
+            " ${cyan}für eine kleine Lagebesprechung die zur Folge hat das nun BOMBEN-BOB seinen großen Auftritt hat\n" +
                     " er bringt seinen Mörser in Stellung lutscht zwischen durch ein paarmal an seinem Zeigefinger und hält ihn in die Luft\n" +
                     " ${green}Johnny$greenreset:“${cyan}Wird das heute noch was?? Ich will heute abend zum SUPERBOWL wieder zuhause sein!!\n" +
                     " ${green}Eageleye$greenreset:“${cyan}Jetzt lass ihn doch mal in Ruhe seine Arbeit machen,\n" +
